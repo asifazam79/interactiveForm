@@ -1,17 +1,40 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import React from 'react'
+import ReactDOM from 'react-dom'
+import { Provider } from 'react-redux'
+import { createStore, combineReducers } from 'redux'
+import { reducer as reduxFormReducer } from 'redux-form'
+import {
+  Values
+} from 'redux-form-website-template'
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+const dest = document.getElementById('content')
+const reducer = combineReducers({
+  form: reduxFormReducer // mounted under "form"
+})
+const store = (window.devToolsExtension
+  ? window.devToolsExtension()(createStore)
+  : createStore)(reducer)
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+const showResults = values =>
+  new Promise(resolve => {
+    setTimeout(() => {
+      // simulate server latency
+      window.alert(`You submitted:\n\n${JSON.stringify(values, null, 2)}`)
+      resolve()
+    }, 500)
+  })
+
+let render = () => {
+  const WizardForm = require('./InteractiveForm').default
+  ReactDOM.hydrate(
+    <Provider store={store}>
+        <WizardForm onSubmit={showResults} />
+        <div class="valuesHolder">
+          <Values form="wizard" />
+          </div>
+    </Provider>,
+    dest
+  )
+}
+
+render()

@@ -1,38 +1,153 @@
-.App {
-  text-align: center;
+body {
+    font: 16px "Century Gothic", Futura, sans-serif;
+    margin: 20px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.pageHolder {
+    width: 50%;
+    margin:0 auto;
+    text-align: center;
+    padding: 1.5em;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+ul.pageTabs {
+    padding: 0;
+    float: left;
+    width: 100%;
+    margin-bottom: 0;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+ul.pageTabs li {
+    list-style-type: none;
+    float: left;
+    color: #666;
+    background-color: #EEE;
+    width: 32.5%;
+    padding: 1em 0;
+    border-radius: 1em 1em 0 0;
+    font-size: 0.8em;
+    font-weight: bold;
+    margin-right: 0.5%;
 }
 
-.App-link {
-  color: #61dafb;
+ul.pageTabs li:last-child {
+    margin-right: 0;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+ul.pageTabs li.highlight {
+    background-color: #FFC100;
+    color: #000;
+}
+
+form {
+    border: 1px solid #CCC;
+    float: left;
+    width: 98%;
+    padding: 1em 0;
+}
+
+form label {
+    float: left;
+    width: 25%;
+    text-align: right;
+    padding: 1.7em 1em;
+    clear: left;
+    font-size: 0.8em;
+    font-weight: bold;
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="password"] {
+    float: left;
+    padding: 0.5em 1em;
+    margin: 1em;
+    width: 30%;
+    clear: right;
+}
+
+form div span {
+    display: block;
+    clear: both;
+    font-size: 0.8em;
+    font-weight: bold;
+    color: #CC0000;
+    text-align: left;
+    margin-left: 31%;
+}
+
+form div span:before {
+    content: '\26A0';
+    margin-right: 5px;
+}
+
+form.privacyForm label {
+    width: 100%;
+    float: left;
+    text-align: left;
+    padding: 0.5em 1em;
+}
+
+form.privacyForm input {
+    margin: 1px 5px 0 0;
+    float: left;
+}
+
+form.privacyForm button {
+    float: left;
+    clear: none;
+    margin: 1em 0 0 1em;
+}
+
+form button {
+    float: left;
+    clear: both;
+    margin-left: 30.5%;
+    background-color: #FFC100;
+    color: #000;
+    border: 0;
+    padding: 0.5em 1em;
+    border-radius: 0.4em;
+    font-weight: bold;
+    margin-top: 1em;
+}
+
+form button:hover {
+    background-color:#FF9A00;
+    cursor: pointer;
+}
+
+div.donePage {
+    float: left;
+    width: 98.3%;
+    border: 1px solid #CCC;
+    padding-bottom: 1em;
+}
+
+div.donePage span {
+    display: block;
+    height: 100px;
+    width: 100px;
+    margin:0 auto;
+}
+
+div.donePage span:before {
+    content: '\2713';
+    color: #006400;
+    display: block;
+    font-size: 5em;
+}
+
+div.donePage p {
+    float:left;
+    width: 100%;
+    font-size: 0.8em;
+    font-weight: bold;
+}
+
+div.valuesHolder {
+    clear: both;
+    width: 50%;
+    margin: 0 auto;
+    padding-top: 2em; 
 }
