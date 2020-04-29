@@ -13,12 +13,6 @@ const validate = values => {
   } else if (!/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d!$%@#£€*?&]{9,}$/i.test(values.password)) {
     errors.password = 'Password must contain minimum nine characters, at least one uppercase letter, one lowercase letter and one number'
   }
-  if (!values.sex) {
-    errors.sex = 'Required'
-  }
-  if (!values.favoriteColor) {
-    errors.favoriteColor = 'Required'
-  }
   return errors
 }
 
